@@ -29,7 +29,6 @@ class GpuDirectAccCheck(rfm.RegressionTest):
         elif self.current_system.name == 'arolla':
             self.exclusive_access = True
             self.modules = [
-                'cuda92/toolkit/9.2.88',
                 'craype-accel-nvidia70',
             ]
             self.variables = {
@@ -42,10 +41,10 @@ class GpuDirectAccCheck(rfm.RegressionTest):
         elif self.current_system.name == 'tsa':
             self.exclusive_access = True
             self.modules = [
-                'cuda10.0/toolkit/10.0.130',
                 'craype-accel-nvidia70',
             ]
             self.variables = {
+                'CRAY_CUDA_MPS': '1',
                 'MV2_USE_CUDA': '1',
                 'G2G': '1'
             }
